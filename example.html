@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>
+		Canvas Transforms
+	</title>
+	<style>
+	body, div, html, canvas {
+		margin: 0; padding: 0;
+	}
+	body {
+		background-color: #dfdfdf;
+	}
+	.score-panel {
+		margin: 20px auto;
+		width: 600px;
+		background-color: #3c3c3c;
+	}
+	.score-panel:after {
+		display: block;
+		float: none;
+		clear: both;
+		width: 0;
+		height: 0;
+		content: '';
+	}
+	.panel-item {
+		width: 200px;
+		float: left;
+	}
+	.panel-item {
+		box-sizing: border-box;
+	}
+	.panel-item:nth-child(3n+2) {
+		border-right: 1px solid black;
+		border-left: 1px solid black;
+	}
+
+	</style>
+	</head>
+	<body>
+		<canvas id='panel' width="200" height="250">
+			
+		</canvas>
+		<script src="animscore.js">			
+		</script>		
+	</body>
+</html>

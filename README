@@ -1,0 +1,7 @@
+Draw pie charts in your site. 
+
+Pure .js, no pluguin required. Uses HTML5 <canvas> 
+
+First Release is a working code that handles animation and drawing the chart.
+
+More features for selecting and passing values should come soon. 
