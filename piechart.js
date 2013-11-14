@@ -21,11 +21,9 @@
 			
 				var time = (new Date()).getTime() - startTime;
 				
-				var angularSpeed = 90;
+				var angularSpeed = 1.5;
 				
-				//var newScoreAngle = scoreRad(angularSpeed * time / 1000) - (Math.PI / 2);
-				
-				var newScoreAngle = (time == 0) ? -(Math.PI / 2) : scoreRad(angularSpeed * time * Math.PI / 2000) - (Math.PI / 2);
+				var newScoreAngle = (time == 0) ? startAngle : (angularSpeed * time * Pi / 1000) + startAngle;
 				
 				context.clearRect(0, 0, canvas.width, canvas.height);
 				
@@ -41,8 +39,10 @@
 							
 			}
 			
+			var Pi = 3.14;
+			
 			function scoreRad(score){
-				var x = (score * 2 * Math.PI) / 100;
+				var x = (score * 2 * Pi) / 100;
 				return x;
 			}
 			
@@ -55,7 +55,7 @@
 			var x = canvas.width / 2;
 			var y = canvas.height / 2;
 			var radius = 50;
-			var startAngle = -(Math.PI / 2);
+			var startAngle = -(Pi / 2);
 			var endAngle = scoreRad(score) + startAngle;
 			var counterClockwise = false;
 			
