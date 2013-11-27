@@ -1,4 +1,58 @@
-			
+//Build a wrapper	
+	
+	function Piechart(canvas) {
+	
+		//Pi is not defined but I use 3.14 as a number. Should it be a var? Will somebody ever need more precision?
+		
+		this.canvas = canvas;
+		this.context = canvas.getContext('2d');
+		this.score = canvas.getAttribute('data-value');	
+		
+		this.color = 'DF2FD2';
+		this.radius = 50;
+		
+		
+		this.posx = canvas.width / 2;
+		this.posy = canvas.height / 2;					
+		
+		this.endAngle = this.scoreRad();
+		this.startAngle = -(3.14 / 2);
+		
+	}
+	
+	Piechart.prototype.scoreRad = function() {
+		var x = (this.score * 2 * 3.14) / 100;
+		return x;
+	}
+		
+	//make x,y, radius, startAngle and conterClockwise options to be passed	
+	Piechart.prototype.drawScore = function( startAngle, this.endAngle, direction){
+		
+		this.context.beginPath();
+		this.context.arc(this.posx, this.posy, this.radius, startAngle, endAngle, direction);
+		this.context.lineWidth = 10;
+		this.context.strokeStyle = this.color;
+		this.context.stroke();
+
+		
+
+	}
+	
+	
+	
+	var canvas = document.getElementById('test');
+	
+	var test = new Piechart(canvas);
+	
+	
+	//test.drawScore();
+
+	
+	
+	
+	
+	
+	/*Code no-wrapper			
 		window.requestAnimFrame = (function(callback) {
 			return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
 				function(callback) {
@@ -63,3 +117,4 @@
 			var startTime = (new Date()).getTime();
 			animate(context, x, y, radius, startAngle, endAngle, counterClockwise, startTime);				
 			}, 500)
+*/
