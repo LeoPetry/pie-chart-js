@@ -39,13 +39,27 @@
 	</style>
 	</head>
 	<body>
-		<canvas id='panel' width="200" height="250">
+		<canvas id='panel' data-value="67" width="200" height="250">
 			
 		</canvas>
-		<canvas id='test' data-value="27" width="200" height="250">
+		<canvas id='test' data-value="25" width="200" height="250">
 			
 		</canvas>
 		<script src="piechart.js">			
+		</script>
+		<script>
+
+			var canvas = document.getElementById('test');
+	
+			var test = new Piechart(canvas);
+			
+			window.setPiechart(test);
+			
+			setTimeout(function(){
+				test.startTime = (new Date()).getTime();
+				test.animate();				
+			}, 500);
+			
 		</script>		
 	</body>
 </html>
