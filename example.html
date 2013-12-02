@@ -50,14 +50,18 @@
 		<script>
 
 			var canvas = document.getElementById('test');
+			var canvas2 = document.getElementById('panel');
 	
 			var test = new Piechart(canvas);
+			var test2 = new Piechart(canvas2);
 			
-			window.setPiechart(test);
+			//window.setPiechart(test);
 			
 			setTimeout(function(){
 				test.startTime = (new Date()).getTime();
 				test.animate();				
+				test2.startTime = (new Date()).getTime();
+				test2.animate();				
 			}, 500);
 			
 		</script>		

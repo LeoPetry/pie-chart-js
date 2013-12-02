@@ -58,41 +58,22 @@
 		
 		this.drawScore(newScoreAngle)
 		
+		var _this = this;
+		
 		if(newScoreAngle < this.endAngle){
 		
-			requestAnimFrame(function(){
-				this.piechart.animate();
+			requestAnimFrame(function(){				
+				_this.animate();
 			});									
 								
 		}
 	}
 	
-		//requestAnimFrame check for each browser RequestAnimationFrame for the window object
-		//this method will set an optimal frame rate
+		//requestAnimFrame set optimal frame rate
 			
 	window.requestAnimFrame = (function(callback) {
 	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
 		function(callback) {
 		  window.setTimeout(callback, 1000 / 60);
 		};
-	})();
-	
-		//setPiechart make the Piechart object available as a property of window
-		//so that it is available inside requestAnimFrame
-	
-	window.setPiechart = function(piechart){		
-		this.piechart = piechart;	
-	}
-
-	
-	
-	/*
-	TODO:
-	
-	!! window.piechart is overwritten by new instances of Piechart. It makes it impossible to have more then one graph animated at the same time
-	
-	*/
-	
-	
-	
-	
+	})();	
