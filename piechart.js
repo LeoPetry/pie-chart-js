@@ -11,21 +11,21 @@
 		
 		this.color = 'DF2FD2';
 		this.radius = 50;
-		
+		this.strokeWidth = 10;
+		this.direction = false; // false == conter-clockwise		
+		this.angularSpeed = 1.5;		
 		
 		this.posx = canvas.width / 2;
 		this.posy = canvas.height / 2;					
 				
 		this.startAngle = -(3.14 / 2);
-		this.endAngle = this.scoreRad() + this.startAngle;
-		
-		this.radius = 50;
-		
-		this.direction = false; // false == conter-clockwise
-		
-		this.angularSpeed = 1.5;
+		this.endAngle = this.scoreRad() + this.startAngle;		
 		
 		this.startTime = (new Date()).getTime();
+		
+		//options for writeScore
+		
+		this.fontStyle = 'italic 28px Calibri';
 		
 	}
 	
@@ -41,14 +41,21 @@
 	Piechart.prototype.drawScore = function(endAngle){		
 		this.context.beginPath();
 		this.context.arc(this.posx, this.posy, this.radius, this.startAngle, endAngle, this.direction);
-		this.context.lineWidth = 10;
+		this.context.lineWidth = this.strokeWidth;
 		this.context.strokeStyle = this.color;
 		this.context.stroke();		
 	}
 	
+	Piechart.prototype.writeScore = function(){
+		this.context.font = this.fontStyle;
+		this.context.textAlign = 'center';
+		this.context.textBaseline = 'middle';
+		return this.context.fillText(this.score, this.posx, this.posy);
+	}
+	
 		//animate will draw an arc on the canvas with incremental values for each frame
 	
-	Piechart.prototype.animate = function(){
+	Piechart.prototype.animate = function(callback){
 
 		var time = (new Date()).getTime() - this.startTime;		
 				
@@ -63,9 +70,13 @@
 		if(newScoreAngle < this.endAngle){
 		
 			requestAnimFrame(function(){				
-				_this.animate();
+				_this.animate(callback);
 			});									
 								
+		}else{
+			if (typeof callback === "function"){
+				callback.apply(this);	
+			}		
 		}
 	}
 	
