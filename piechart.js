@@ -41,7 +41,7 @@
 		
 	Piechart.prototype.radToScore = function(radians) {		
 		var x = ((radians - this.startAngle) * 100 )/ (2 * 3.14);
-		return Math.round(x);
+		return Math.floor(x);
 	}
 		
 		//drawScore draws an arc on canvas object
