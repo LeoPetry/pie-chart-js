@@ -55,17 +55,18 @@
 			var test = new Piechart(canvas);
 			var test2 = new Piechart(canvas2);			
 			
-			setTimeout(function(){
-				test.startTime = (new Date()).getTime();
-				test.animate(test.writeScore);				
-				test2.startTime = (new Date()).getTime();
-				test2.animate(test2.writeScore);				
-			}, 500);
-/*
-			setTimeout(function(){			
-				test.writeScore();
-			}, 3000);
-*/
+			setTimeout(function(){				
+				//test2.startTimer();
+				//test2.animate(test2.writeScore);
+				
+				test2.drawScore(test2.endAngle);
+				test2.writeScore();
+				
+			}, 100);
+			
+			test.startTimer();
+			test.animate();				
+
 		</script>		
 	</body>
 </html>
