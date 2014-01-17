@@ -1,7 +1,22 @@
-Draw pie charts in your site. 
+#pie-chart-js 
 
-Pure .js, no pluguin required. Uses HTML5 <canvas> 
+##Easily draw pie charts like the gauges at awwwards website.
 
-First Release is a working code that handles animation and drawing the chart.
+Pie-chart is a small javascript pluguin. No library required, easy inicialize it like (*check example.html)
 
-More features for selecting and passing values should come soon. 
+###How it works:
+
+Add a canvas element and assign a data-score atribute to it.
+Pass the DOM object to Piechart(myCanvas) and call the animate methid or write score.
+
+###Options:
+
+color = 'DF2FD2'; // the arc color
+this.opositeColor = '333333'; // the oposite arc color
+this.textColor = 'DF2FD2'; 
+this.fontStyle = 'italic 28px Calibri'; 
+this.symbol = ''; // append a string to the text
+this.radius = 50; // arc radius
+this.strokeWidth = 10; 
+this.direction = false; // false == conter-clockwise		
+this.angularSpeed = 1.5;	// animation speed			 
