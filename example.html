@@ -45,15 +45,20 @@
 		<canvas id='test' data-value="25" width="200" height="250">
 			
 		</canvas>
+		<canvas id='panel2' data-value="88" width="200" height="250">
+			
+		</canvas>
 		<script src="piechart.js">			
 		</script>
 		<script>
 
 			var canvas = document.getElementById('test');
 			var canvas2 = document.getElementById('panel');
+			var canvas3 = document.getElementById('panel2');
 	
 			var test = new Piechart(canvas);
 			var test2 = new Piechart(canvas2);			
+			var test3 = new Piechart(canvas3);			
 			
 			setTimeout(function(){				
 				//test2.startTimer();
@@ -62,8 +67,11 @@
 				test2.drawScore(test2.endAngle);
 				test2.writeScore();
 				
+				test3.symbol = "%";
+				test3.startTimer();				
+				test3.animate();
+				
 			}, 100);
-			
 			test.startTimer();
 			test.animate();				
 

@@ -25,6 +25,9 @@
 		this.posy 			= canvas.height / 2;					
 				
 		this.startAngle 	= -(3.14 / 2);
+		
+		//TODO: need to define end angle only after new Pierchart is created
+		
 		this.endAngle 		= this.scoreRad() + this.startAngle;
 		
 		//when startTime is defined, no need to initiate startTimer()
