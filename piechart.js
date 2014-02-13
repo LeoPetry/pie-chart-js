@@ -7,11 +7,11 @@
 		
 		this.canvas 		= canvas;
 		this.context 		= canvas.getContext('2d');
-		this.score 			= canvas.getAttribute('data-value');	
+		this.score 		= canvas.getAttribute('data-value');	
 		
 		//options and default values
 		
-		this.color 		  	= 'DF2FD2';
+		this.color 	  	= 'DF2FD2';
 		this.opositeColor 	= '333333';
 		this.textColor 		= 'DF2FD2';
 		this.fontStyle 		= 'italic 28px Calibri';
@@ -21,8 +21,8 @@
 		this.direction 		= false; // false == conter-clockwise		
 		this.angularSpeed 	= 1.5;				
 		
-		this.posx 			= canvas.width / 2;
-		this.posy 			= canvas.height / 2;					
+		this.posx 		= canvas.width / 2;
+		this.posy 		= canvas.height / 2;					
 				
 		this.startAngle 	= -(3.14 / 2);
 		
