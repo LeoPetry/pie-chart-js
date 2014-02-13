@@ -11,80 +11,43 @@
 	body {
 		background-color: #dfdfdf;
 	}
-	.score-panel {
-		margin: 20px auto;
-		width: 600px;
-		background-color: #3c3c3c;
-	}
-	.score-panel:after {
-		display: block;
-		float: none;
-		clear: both;
-		width: 0;
-		height: 0;
-		content: '';
-	}
-	.panel-item {
-		width: 200px;
-		float: left;
-	}
-	.panel-item {
-		box-sizing: border-box;
-	}
-	.panel-item:nth-child(3n+2) {
-		border-right: 1px solid black;
-		border-left: 1px solid black;
-	}
-
 	</style>
 	</head>
 	<body>
-		<canvas id='panel' data-value="67" width="200" height="250">
-			
-		</canvas>
-		<canvas id='test' data-value="25" width="200" height="250">
-			
-		</canvas>
-		<canvas id='panel2' data-value="88" width="200" height="250">
-			
-		</canvas>
-		<canvas id='panel3' data-value="25" width="200" height="250">
-			
-		</canvas>
-		<script src="piechart.js">			
+	
+	<div style="margin: 50px auto; background-color: #FFF; width: 250px;">
+	
+		<canvas id='foo' data-value="67" width="250" height="250"></canvas>
+		
+	</div>
+		<script src="src/piechart.min.js">			
 		</script>
 		<script>
 
-			var canvas = document.getElementById('test');
-			var canvas2 = document.getElementById('panel');
-			var canvas3 = document.getElementById('panel2');
-			var canvas4 = document.getElementById('panel3');
-	
-			var test = new Piechart(canvas);
-			var test2 = new Piechart(canvas2);			
-			var test3 = new Piechart(canvas3);			
-			var test4 = new Piechart(canvas4);			
+			//Get DOM canvases
+			var fooCanvas = document.getElementById('foo');
 			
-			setTimeout(function(){				
-				//test2.startTimer();
-				//test2.animate(test2.writeScore);
+			//New instance of Piechart	
+			var foo = new Piechart(fooCanvas);	
+						
+			//* The Following code will be condensed 
+			// in one method in the near future
+			
+			var Pi = 3.1415;
+			
+			//Start point of the circuference			
+			var startPlace = 3*Pi/2;
+			
+			//The end point of the circuference
+			//The score in radians + the startPlace
+			var endPlace = foo.scoreRadians(foo.score)+startPlace;
+			
+			//Start of the animation 500 milies after
+			setTimeout(function(){
 				
-				test2.drawScore(test2.endAngle);
-				test2.writeScore();
-				
-				test3.symbol = "%";
-				test3.startTimer();
-				test3.angularSpeed = 3;				
-				test3.animate();
-				
-				test4.startTimer();
-				test4.startAngle = -3.15;
-				test4.animate();
-				
-				
-			}, 100);
-			test.startTimer();
-			test.animate();				
+				//This is the method to start the animation
+				foo.makeItDance(startPlace, endPlace);				
+			}, 500);
 
 		</script>		
 	</body>

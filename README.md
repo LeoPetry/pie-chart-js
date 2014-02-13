@@ -18,5 +18,4 @@ Pass the DOM object to Piechart(myCanvas) and call the animate methid or write s
 - symbol = ''; // append a string to the text
 - radius = 50; // arc radius
 - strokeWidth = 10; 
-- direction = false; // false == conter-clockwise
 - angularSpeed = 1.5;	// animation speed
