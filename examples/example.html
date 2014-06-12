@@ -20,7 +20,7 @@
 		<canvas id='foo' data-value="67" width="250" height="250"></canvas>
 		
 	</div>
-		<script src="src/piechart.min.js">			
+		<script src="/build/piechart.min.js">			
 		</script>
 		<script>
 
@@ -40,8 +40,7 @@
 			var endPlace = foo.scoreRadians(foo.score)+startPlace;
 			
 			//Start of the animation 500 milies after
-			setTimeout(function(){
-				
+			setTimeout(function(){				
 				//This is the method to start the animation
 				foo.makeItDance(startPlace, endPlace);				
 			}, 500);

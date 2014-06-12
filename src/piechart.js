@@ -34,18 +34,18 @@
 	
 		//3.1415 is Pi
 		
-		this.Pi 		= 3.1415;
+		this.Pi 		    =   3.1415;
 		
 		this.canvas 		= canvas;
 		this.context 		= canvas.getContext('2d');
-		this.score 		= canvas.getAttribute('data-value');
+		this.score 		    = canvas.getAttribute('data-value');
 		
 		this.animFlag		= false;	
 		
 		// options
 		
-		this.track 		= true;
-		this.color 		= 'DF2FD2';
+		this.track 			= true;
+		this.color 			= 'DF2FD2';
 		this.opositeColor 	= '333333';
 		this.textColor 		= 'DF2FD2';
 		this.fontStyle 		= 'italic 28px sans-serif';
@@ -60,8 +60,7 @@
 		
 	}
 	
-	//Conversion functions first
-	
+	//Conversion functions first	
 	
 	Piechart.prototype.scoreRadians = function(score) {
 		//scoreRadians -> Score to radians	
