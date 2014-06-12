@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>
+		Canvas Transforms
+	</title>
+	<style>
+	body, div, html, canvas {
+		margin: 0; padding: 0;
+	}
+	body {
+		background-color: #dfdfdf;
+	}
+	</style>
+	</head>
+	<body>
+	
+	<div style="margin: 50px auto; background-color: #FFF; width: 250px;">
+	
+		<canvas id='foo' data-value="67" width="250" height="250"></canvas>
+		
+	</div>
+		<script src="src/piechart.min.js">			
+		</script>
+		<script>
+
+			//Get DOM canvases
+			var fooCanvas = document.getElementById('foo');
+			
+			//New instance of Piechart	
+			var foo = new Piechart(fooCanvas);
+			
+			var Pi = 3.1415;
+			
+			//Start point of the circuference			
+			var startPlace = 3*Pi/2;
+			
+			//The end point of the circuference
+			//The score in radians + the startPlace
+			var endPlace = foo.scoreRadians(foo.score)+startPlace;
+			
+			//Start of the animation 500 milies after
+			setTimeout(function(){
+				
+				//This is the method to start the animation
+				foo.makeItDance(startPlace, endPlace);				
+			}, 500);
+
+		</script>		
+	</body>
+</html>
