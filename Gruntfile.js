@@ -10,11 +10,23 @@ module.exports = function(grunt) {
         src: 'src/<%= pkg.name %>.js',
         dest: 'build/<%= pkg.name %>.min.js'
       }
+    },
+    qunit: {
+      all: {
+        options: {
+          urls: [
+            'http://localhost:8000/unit_test/tests.html'
+          ]
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
 
   grunt.registerTask('default', ['uglify']);
+
+  grunt.registerTask('test', ['qunit']);
 
 };
