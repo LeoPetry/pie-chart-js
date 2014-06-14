@@ -4,8 +4,8 @@
 	<title>
 		Canvas Transforms
 	</title>
-	 <link rel="stylesheet" href="test/qunit.css">
-	 <script src="test/qunit.js"></script>
+	 <link rel="stylesheet" href="qunit.css">
+	 <script src="qunit.js"></script>
 	<style>
 	body, div, html, canvas {
 		margin: 0; padding: 0;
@@ -41,25 +41,37 @@
 	</style>
 	</head>
 	<body>
-			<div id="qunit"></div>
-		<canvas id='panel' data-value="50" width="200" height="250">
-			
+		<div id="qunit"></div>
+		<br /><br />
+		<canvas id='panel' data-value="50" width="200" height="250">			
 		</canvas>
-		<script src="piechart.js">			
+		<script src="/src/piechart.js">
 		</script>
 		<script>
+
+		var Pi = 3.1415;
+		
 		var canvas = document.getElementById('panel');
 		var test = new Piechart(canvas);
+
 			
-		/*QUnit.test("test-writeScore", function(assert){
+		QUnit.test("test-writeMyScore-50", function(assert){
+
+			var score = test.writeMyScore(0, Pi);
 			
-			var radians = test.scoreRadians();
-			
-			assert.equal(radians,(50*2*3.14/100));
+			assert.equal(score, 50);
 			
 		});
-		*/
-		//test.startAngle = 3.14;	
+
+		QUnit.test("test-writeMyScore-75", function(assert){
+			
+			var score = test.writeMyScore(0, 3*Pi/2 );
+			
+			assert.equal(score, 75);
+			
+		});
+		
+		test.startAngle = 3.14;	
 		
 		QUnit.test("test-radToScore", function(assert){			
 
@@ -75,8 +87,6 @@
 			
 			var Pi = 3.1415;
 			
-			//var draw = test.drawPie(Pi/2,2*Pi);			
-			
 			var startPlace = 3*Pi/2;
 			
 			var endPlace = test.scoreRadians(50)+startPlace;
@@ -88,13 +98,6 @@
 			
 		});
 		
-		
-		
-		//test.makeItDance(0,test.scoreRadians(test.score));
-		
-
-		
-
 		</script>		
 	</body>
 </html>
